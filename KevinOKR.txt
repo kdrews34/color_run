@@ -1,0 +1,3 @@
+Implement color switch for the platforms -- Sunday by 11pm (2 hours)
+Implement color switching for the character -- Monday by 11pm (2 hours)
+Add UI elemet to show color switching -- Tuesday by 11pm (2 hours)
