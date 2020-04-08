@@ -6,7 +6,7 @@ public class colorSwitch : MonoBehaviour
 {
     public GameObject Player;
 
-    private bool on;
+    private bool redblue;
     public string baseColor;
     Color gray;
     Color red;
@@ -18,42 +18,61 @@ public class colorSwitch : MonoBehaviour
         gray = Color.gray;
         red = Color.red;
         blue = Color.blue;
-        GetComponent<Collider>().isTrigger = true;
-        GetComponent<Renderer>().material.color = gray;
-        on = false;
+        if (baseColor == "blue"){
+            GetComponent<Collider>().isTrigger = true;
+            GetComponent<Renderer>().material.color = gray;
+        }
+        else {
+            GetComponent<Collider>().isTrigger = false;
+            GetComponent<Renderer>().material.color = red;
+        }
+        
+        redblue = true;
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.E) && baseColor == "red") {
-            if (on){
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if (redblue && baseColor == "red"){
                 GetComponent<AudioSource>().Play();
                 GetComponent<Collider>().isTrigger = true;
                 GetComponent<Renderer>().material.color = gray;
-                on = false;
+                redblue = false;
             }
-            else{
+            else if (!redblue && baseColor == "red"){
                 GetComponent<AudioSource>().Play();
                 GetComponent<Collider>().isTrigger = false;
                 GetComponent<Renderer>().material.color = red;
-                on = true;
+                redblue = true;
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.R) && baseColor == "blue") {
-        GetComponent<AudioSource>().Play();
-
-            if (on){
+            else if (!redblue && baseColor == "blue"){
                 GetComponent<AudioSource>().Play();
                 GetComponent<Collider>().isTrigger = true;
                 GetComponent<Renderer>().material.color = gray;
-                on = false;
+                redblue = true;
             }
-            else{
+            else if (redblue && baseColor == "blue"){
                 GetComponent<AudioSource>().Play();
                 GetComponent<Collider>().isTrigger = false;
                 GetComponent<Renderer>().material.color = blue;
-                on = true;
+                redblue = false;
             }
         }
+        // else if (Input.GetKeyDown(KeyCode.R) && baseColor == "blue") {
+        // GetComponent<AudioSource>().Play();
+
+        //     if (redblue){
+        //         GetComponent<AudioSource>().Play();
+        //         GetComponent<Collider>().isTrigger = true;
+        //         GetComponent<Renderer>().material.color = gray;
+        //         redblue = false;
+        //     }
+        //     else{
+        //         GetComponent<AudioSource>().Play();
+        //         GetComponent<Collider>().isTrigger = false;
+        //         GetComponent<Renderer>().material.color = blue;
+        //         redblue = true;
+        //     }
+        // }
     }
 }
