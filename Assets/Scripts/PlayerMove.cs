@@ -19,6 +19,10 @@ public class PlayerMove : MonoBehaviour
 
     private bool isJumping;
 
+    [SerializeField] private AudioSource JumpSound;
+    [SerializeField] private AudioSource DieSound;
+
+
     private void Awake()
     {
         originalPosition = transform.position;
@@ -39,7 +43,10 @@ public class PlayerMove : MonoBehaviour
 
     private void LateUpdate() {
         if (transform.position.y < 2f)
-            resetTransform();
+        {
+          DieSound.Play();
+          resetTransform();
+        }
     }
 
     private void PlayerMovement()
@@ -59,6 +66,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(Input.GetKeyDown(jumpKey) && !isJumping)
         {
+            JumpSound.Play();
             isJumping = true;
             StartCoroutine(JumpEvent());
         }
