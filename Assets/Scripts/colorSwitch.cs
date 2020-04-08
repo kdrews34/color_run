@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class colorSwitch : MonoBehaviour
 {
+    public GameObject Player;
+
     private bool on;
     public string baseColor;
     Color gray;
@@ -23,35 +25,35 @@ public class colorSwitch : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-    if (Input.GetKeyDown(KeyCode.E) && baseColor == "red") {
-        if (on){
-            GetComponent<AudioSource>().Play();
-            GetComponent<Collider>().isTrigger = true;
-            GetComponent<Renderer>().material.color = gray;
-            on = false;
+        if (Input.GetKeyDown(KeyCode.E) && baseColor == "red") {
+            if (on){
+                GetComponent<AudioSource>().Play();
+                GetComponent<Collider>().isTrigger = true;
+                GetComponent<Renderer>().material.color = gray;
+                on = false;
+            }
+            else{
+                GetComponent<AudioSource>().Play();
+                GetComponent<Collider>().isTrigger = false;
+                GetComponent<Renderer>().material.color = red;
+                on = true;
+            }
         }
-        else{
-            GetComponent<AudioSource>().Play();
-            GetComponent<Collider>().isTrigger = false;
-            GetComponent<Renderer>().material.color = red;
-            on = true;
-        }
-    }
-    else if (Input.GetKeyDown(KeyCode.R) && baseColor == "blue") {
-      GetComponent<AudioSource>().Play();
+        else if (Input.GetKeyDown(KeyCode.R) && baseColor == "blue") {
+        GetComponent<AudioSource>().Play();
 
-        if (on){
-            GetComponent<AudioSource>().Play();
-            GetComponent<Collider>().isTrigger = true;
-            GetComponent<Renderer>().material.color = gray;
-            on = false;
-        }
-        else{
-            GetComponent<AudioSource>().Play();
-            GetComponent<Collider>().isTrigger = false;
-            GetComponent<Renderer>().material.color = blue;
-            on = true;
+            if (on){
+                GetComponent<AudioSource>().Play();
+                GetComponent<Collider>().isTrigger = true;
+                GetComponent<Renderer>().material.color = gray;
+                on = false;
+            }
+            else{
+                GetComponent<AudioSource>().Play();
+                GetComponent<Collider>().isTrigger = false;
+                GetComponent<Renderer>().material.color = blue;
+                on = true;
+            }
         }
     }
-}
 }
