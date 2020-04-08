@@ -24,15 +24,14 @@ public class colorSwitch : MonoBehaviour
     // Update is called once per frame
     void Update() {
     if (Input.GetKeyDown(KeyCode.E) && baseColor == "red") {
-        GetComponent<AudioSource>().Play();
-
-
         if (on){
+            GetComponent<AudioSource>().Play();
             GetComponent<Collider>().isTrigger = true;
             GetComponent<Renderer>().material.color = gray;
             on = false;
         }
         else{
+            GetComponent<AudioSource>().Play();
             GetComponent<Collider>().isTrigger = false;
             GetComponent<Renderer>().material.color = red;
             on = true;
@@ -42,11 +41,13 @@ public class colorSwitch : MonoBehaviour
       GetComponent<AudioSource>().Play();
 
         if (on){
+            GetComponent<AudioSource>().Play();
             GetComponent<Collider>().isTrigger = true;
             GetComponent<Renderer>().material.color = gray;
             on = false;
         }
         else{
+            GetComponent<AudioSource>().Play();
             GetComponent<Collider>().isTrigger = false;
             GetComponent<Renderer>().material.color = blue;
             on = true;
