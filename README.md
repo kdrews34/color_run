@@ -16,11 +16,14 @@ help make the game fit its theme which is the reach the end.
 
 Mechanim:
 Intro Character - Fernando Martinez
+
 This Character is the intro character that brought you through the color world
 And no he watches you complete the mission to obtain color
 Cube Animation - Kevin Andrews
+
 Is a collectible that you grab when you complete the level. It has an
 animation to let the player know you need to grab it
 Levitating platform - Trishla Shah
+
 Its a platform that goes up down, effecting how the player navigates the
 level
