@@ -16,7 +16,6 @@ public class collecting : MonoBehaviour
             var tempColor = nextColor.GetComponent<RawImage>().color;
             tempColor.a = 0.4f;
             nextColor.GetComponent<RawImage>().color = tempColor;
-            
         }
     }
 }
