@@ -12,7 +12,10 @@ public class colorSwitch : MonoBehaviour
     public Material grayMat;
     private Material baseMat;
 
-    private bool redblue;
+    public bool blueEnabled;
+
+
+    public bool redblue;
     public string baseColor;
     Color gray;
     Color red;
@@ -21,6 +24,8 @@ public class colorSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //blueEnabled = GameObject.Find("blueCollect").GetComponent<collecting>().blueEnabled;
+        blueEnabled = false;
         gray = Color.gray;
         red = Color.red;
         blue = Color.blue;
@@ -33,8 +38,6 @@ public class colorSwitch : MonoBehaviour
             GetComponent<Collider>().isTrigger = false;
             baseMat = GetComponent<Renderer>().material;
         }
-        
-        redblue = true;
     }
 
     // Update is called once per frame
@@ -58,7 +61,7 @@ public class colorSwitch : MonoBehaviour
                 RedUI.GetComponent<RawImage>().color = tempColor;
                 redblue = true;
             }
-            else if (!redblue && baseColor == "blue"){ //turn blue off
+            else if (!redblue && baseColor == "blue" && blueEnabled){ //turn blue off
                 GetComponent<AudioSource>().Play();
                 GetComponent<Collider>().isTrigger = true;
                 GetComponent<Renderer>().material = grayMat;
@@ -67,7 +70,7 @@ public class colorSwitch : MonoBehaviour
                 BlueUI.GetComponent<RawImage>().color = tempColor;
                 redblue = true;
             }
-            else if (redblue && baseColor == "blue"){ //turn blue on;
+            else if (redblue && baseColor == "blue" && blueEnabled){ //turn blue on;
                 GetComponent<AudioSource>().Play();
                 GetComponent<Collider>().isTrigger = false;
                 GetComponent<Renderer>().material = baseMat;
