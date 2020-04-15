@@ -27,6 +27,8 @@ Sounds:
 jump sound - jumping sound for added realism
 death sound - death sound to let you know you messed up
 switch sound - sound that indicates the platform colors have been switched
+game theme - on loop sound per level, so when you get to the next level, new sound
+Collecting a color- sound to alter the player when they pick up a new color
 
 textures:
 wall texture - general dark ominous wall texture
@@ -50,3 +52,10 @@ Its a platform that goes up down, effecting how the player navigates the
 level
 
 **AI: our game design really doesn't warrant any AI use. it is a platformer at its core and there are no enemies, so we were unable to find a place for any kind of AI that wasn't forced and didn't completely undermine the vision of the game
+
+UI Design
+Color GUI- added a color switch at the bottom to show what color the player was using and which were availible. 
+Texture- added texture to the platforms to make them more realistic
+Walls- Changed the walls to blend in more with the theme of the game 
+
+
