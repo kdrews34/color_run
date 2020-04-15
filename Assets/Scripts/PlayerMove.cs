@@ -17,16 +17,21 @@ public class PlayerMove : MonoBehaviour
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
+    [SerializeField] private AudioSource startTheme;
+    [SerializeField] private AudioSource firstLevelTheme;
+
+    private string currentTheme;
+
     private bool isJumping;
 
     [SerializeField] private AudioSource JumpSound;
     [SerializeField] private AudioSource DieSound;
 
+    
 
     private void Awake()
     {
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        currentTheme = "start";
         charController = GetComponent<CharacterController>();
     }
 
@@ -38,6 +43,14 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        if (transform.position.z > -24f && currentTheme == "start"){
+            originalPosition = transform.position;
+            originalRotation = transform.rotation;
+            currentTheme = "first";
+            startTheme.Stop();
+            firstLevelTheme.Play();
+        }
+
         if (Input.GetKey(KeyCode.Escape))
             Application.Quit();
             
