@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -356,7 +356,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95410356361e544e89b8a612fd6ac8d3, type: 2}
+  - {fileID: 2100000, guid: 6a03c671becfcef4ba4a37fd1375146c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1386,7 +1386,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02c96c8b98e6c8d4696ba8dc41552005, type: 2}
+  - {fileID: 2100000, guid: 22e0c8e4c3c7ca24e8bd3b674e36b52b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1430,6 +1430,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: red
 --- !u!82 &228582119
 AudioSource:
@@ -2078,7 +2079,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02c96c8b98e6c8d4696ba8dc41552005, type: 2}
+  - {fileID: 2100000, guid: 22e0c8e4c3c7ca24e8bd3b674e36b52b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2122,6 +2123,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: red
 --- !u!82 &274937551
 AudioSource:
@@ -2961,7 +2963,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f53b47367c667a438044c89306c6010, type: 2}
+  - {fileID: 2100000, guid: 6a1bc368f64c1f348aee51e8d12defee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3005,6 +3007,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: blue
 --- !u!82 &359393064
 AudioSource:
@@ -3757,7 +3760,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f53b47367c667a438044c89306c6010, type: 2}
+  - {fileID: 2100000, guid: 6a1bc368f64c1f348aee51e8d12defee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3801,6 +3804,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: blue
 --- !u!82 &436536821
 AudioSource:
@@ -4427,7 +4431,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f53b47367c667a438044c89306c6010, type: 2}
+  - {fileID: 2100000, guid: 6a1bc368f64c1f348aee51e8d12defee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4471,6 +4475,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: blue
 --- !u!82 &520804404
 AudioSource:
@@ -5969,7 +5974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02c96c8b98e6c8d4696ba8dc41552005, type: 2}
+  - {fileID: 2100000, guid: 22e0c8e4c3c7ca24e8bd3b674e36b52b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6013,6 +6018,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: red
 --- !u!82 &746178265
 AudioSource:
@@ -6323,7 +6329,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02c96c8b98e6c8d4696ba8dc41552005, type: 2}
+  - {fileID: 2100000, guid: 22e0c8e4c3c7ca24e8bd3b674e36b52b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6367,6 +6373,7 @@ MonoBehaviour:
   Player: {fileID: 262794885}
   RedUI: {fileID: 2133706194}
   BlueUI: {fileID: 582307183}
+  grayMat: {fileID: 2100000, guid: 97d16303cbd9c1a4890c8b03a7dca02d, type: 2}
   baseColor: red
 --- !u!82 &789838909
 AudioSource:
@@ -6900,7 +6907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95410356361e544e89b8a612fd6ac8d3, type: 2}
+  - {fileID: 2100000, guid: 6a03c671becfcef4ba4a37fd1375146c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9071,7 +9078,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95410356361e544e89b8a612fd6ac8d3, type: 2}
+  - {fileID: 2100000, guid: 6a03c671becfcef4ba4a37fd1375146c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11271,7 +11278,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95410356361e544e89b8a612fd6ac8d3, type: 2}
+  - {fileID: 2100000, guid: 6a03c671becfcef4ba4a37fd1375146c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12303,7 +12310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95410356361e544e89b8a612fd6ac8d3, type: 2}
+  - {fileID: 2100000, guid: 6a03c671becfcef4ba4a37fd1375146c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12677,7 +12684,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95410356361e544e89b8a612fd6ac8d3, type: 2}
+  - {fileID: 2100000, guid: 6a03c671becfcef4ba4a37fd1375146c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
