@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private AudioSource startTheme;
     [SerializeField] private AudioSource firstLevelTheme;
+    [SerializeField] private AudioSource DungeonAmbience;
 
     private string currentTheme;
 
@@ -43,12 +44,13 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.z > -24f && currentTheme == "start"){
+        if (transform.position.z > -26f && currentTheme == "start"){
             originalPosition = transform.position;
             originalRotation = transform.rotation;
             currentTheme = "first";
             startTheme.Stop();
             firstLevelTheme.Play();
+            DungeonAmbience.Play();
         }
 
         if (Input.GetKey(KeyCode.Escape))
