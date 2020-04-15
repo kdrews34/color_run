@@ -29,9 +29,11 @@ death sound - death sound to let you know you messed up
 switch sound - sound that indicates the platform colors have been switched
 game theme - on loop sound per level, so when you get to the next level, new sound
 Collecting a color- sound to alter the player when they pick up a new color
+NPC sound - Sound for when the NPC talks to you
+
 
 textures:
-wall texture - general dark ominous wall texture
+wall texture - general light dungeon ominous wall texture
 floor texture - made to look like spikes so you know not to fall
 end platforms texture - differentiated from wall and floor to signify safe zones
 
@@ -55,7 +57,8 @@ level
 
 UI Design
 Color GUI- added a color switch at the bottom to show what color the player was using and which were availible. 
-Texture- added texture to the platforms to make them more realistic
+Texture- added texture to the platforms to make them more realistic. Plus changed the wall to give better view of the environment
 Walls- Changed the walls to blend in more with the theme of the game 
+Sound- Added various of sounds to for quality of life and to ensure everything you do gets a recognized sound
 
 
