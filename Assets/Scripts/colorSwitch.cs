@@ -24,7 +24,7 @@ public class colorSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //blueEnabled = GameObject.Find("blueCollect").GetComponent<collecting>().blueEnabled;
+        redblue = true;
         blueEnabled = false;
         gray = Color.gray;
         red = Color.red;
