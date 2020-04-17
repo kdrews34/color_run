@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private AudioSource JumpSound;
     [SerializeField] private AudioSource DieSound;
 
-    
+
 
     private void Awake()
     {
@@ -52,10 +52,8 @@ public class PlayerMove : MonoBehaviour
             firstLevelTheme.Play();
             DungeonAmbience.Play();
         }
+            //Application.Quit();
 
-        if (Input.GetKey(KeyCode.Escape))
-            Application.Quit();
-            
         PlayerMovement();
     }
 
