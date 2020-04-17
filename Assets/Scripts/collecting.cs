@@ -8,31 +8,25 @@ public class collecting : MonoBehaviour
     public GameObject Player;
     public GameObject nextColor;
     public GameObject colorSound;
+    public string[] colors = new string[] {"red1", "red2", "red3", "red4", "blue1", "blue2", "blue3", "green1"};
 
-    public bool blueEnabled;
-
-    void Start(){
-        blueEnabled = false;
-    }
+    public string thisColor;
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.name == "Player"){
             colorSound.GetComponent<AudioSource>().Play();
-            GameObject.Find("red1").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("red2").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("red3").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("red4").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("blue1").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("blue2").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("blue3").GetComponent<colorSwitch>().blueEnabled = true;
-            GameObject.Find("blue1").GetComponent<colorSwitch>().redblue = GameObject.Find("red1").GetComponent<colorSwitch>().redblue;
-            GameObject.Find("blue2").GetComponent<colorSwitch>().redblue = GameObject.Find("red1").GetComponent<colorSwitch>().redblue;
-            GameObject.Find("blue3").GetComponent<colorSwitch>().redblue = GameObject.Find("red1").GetComponent<colorSwitch>().redblue;
+            for (int i = 0; i < 7; i++){
+                if (thisColor == "blue")
+                    GameObject.Find(colors[i]).GetComponent<colorSwitch>().blueEnabled = true;
+                if (thisColor == "green")
+                    GameObject.Find(colors[i]).GetComponent<colorSwitch>().greenEnabled = true;
+
+                GameObject.Find(colors[i]).GetComponent<colorSwitch>().currentColor = GameObject.Find("red1").GetComponent<colorSwitch>().currentColor;
+            }
             Destroy(this.gameObject);
             var tempColor = nextColor.GetComponent<RawImage>().color;
             tempColor.a = 0.4f;
             nextColor.GetComponent<RawImage>().color = tempColor;
-            blueEnabled = true;
         }
     }
 }

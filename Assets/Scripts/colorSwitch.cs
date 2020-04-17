@@ -8,14 +8,15 @@ public class colorSwitch : MonoBehaviour
     public GameObject Player;
     public GameObject RedUI;
     public GameObject BlueUI;
+    public GameObject GreenUI;
 
     public Material grayMat;
     private Material baseMat;
 
     public bool blueEnabled;
+    public bool greenEnabled;
 
-
-    public bool redblue;
+    public string currentColor;
     public string baseColor;
     Color gray;
     Color red;
@@ -24,61 +25,123 @@ public class colorSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        redblue = true;
+        currentColor = "red";
         blueEnabled = false;
-        gray = Color.gray;
-        red = Color.red;
-        blue = Color.blue;
-        if (baseColor == "blue"){
+        greenEnabled = false;
+
+        if (baseColor == "red"){
+            GetComponent<Collider>().isTrigger = false;
+            baseMat = GetComponent<Renderer>().material;
+        }
+        else {
             GetComponent<Collider>().isTrigger = true;
             baseMat = GetComponent<Renderer>().material;
             GetComponent<Renderer>().material = grayMat;
-        }
-        else {
-            GetComponent<Collider>().isTrigger = false;
-            baseMat = GetComponent<Renderer>().material;
         }
     }
 
     // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
-            if (redblue && baseColor == "red"){ //turn red off
-                GetComponent<AudioSource>().Play();
-                GetComponent<Collider>().isTrigger = true;
-                GetComponent<Renderer>().material = grayMat;
-                var tempColor = RedUI.GetComponent<RawImage>().color;
-                tempColor.a = 0.4f;
-                RedUI.GetComponent<RawImage>().color = tempColor;
-                redblue = false;
+            string nextColor = getNextColor();
+            if (nextColor == "red" && baseColor == "red")
+                turnRedOn();
+            else if (nextColor == "gray")
+                turnRedOff();
+            else if (nextColor == "red" && baseColor == "blue" && blueEnabled)
+                turnBlueOff();
+            else if (nextColor == "blue" && baseColor == "blue")
+                turnBlueOn();
+            else if (nextColor == "blue" && baseColor == "red")
+                turnRedOff();
+            else if (nextColor == "blue" && baseColor == "green" && greenEnabled){
+                Debug.Log("calling turngreenoff");
+                turnGreenOff();
             }
-            else if (!redblue && baseColor == "red"){ //turn red on
-                GetComponent<AudioSource>().Play();
-                GetComponent<Collider>().isTrigger = false;
-                GetComponent<Renderer>().material = baseMat;
-                var tempColor = RedUI.GetComponent<RawImage>().color;
-                tempColor.a = 1f;
-                RedUI.GetComponent<RawImage>().color = tempColor;
-                redblue = true;
+            else if (nextColor == "green" && baseColor == "green"){
+                Debug.Log("calling turngreenon");
+                turnGreenOn();
             }
-            else if (!redblue && baseColor == "blue" && blueEnabled){ //turn blue off
-                GetComponent<AudioSource>().Play();
-                GetComponent<Collider>().isTrigger = true;
-                GetComponent<Renderer>().material = grayMat;
-                var tempColor = BlueUI.GetComponent<RawImage>().color;
-                tempColor.a = 0.4f;
-                BlueUI.GetComponent<RawImage>().color = tempColor;
-                redblue = true;
+            else if (nextColor == "green" && baseColor == "red")
+                turnRedOff();
+            else if (nextColor == "green" && baseColor == "blue")
+                turnBlueOff();
+            else{
+                Debug.Log("Undefined state");
             }
-            else if (redblue && baseColor == "blue" && blueEnabled){ //turn blue on;
-                GetComponent<AudioSource>().Play();
-                GetComponent<Collider>().isTrigger = false;
-                GetComponent<Renderer>().material = baseMat;
-                var tempColor = BlueUI.GetComponent<RawImage>().color;
-                tempColor.a = 1f;
-                BlueUI.GetComponent<RawImage>().color = tempColor;
-                redblue = false;
-            }
+            currentColor = nextColor;
         }
+    }
+
+    private string getNextColor(){
+        if (currentColor == "red" && blueEnabled)
+            return "blue";
+        if (currentColor == "red" && !blueEnabled)
+            return "gray";
+        if (currentColor == "blue" && greenEnabled)
+        {
+            Debug.Log("returning green");
+            return "green";
+        }
+        if (currentColor == "blue" && !greenEnabled)
+            return "red";
+        if (currentColor == "green")
+            return "red";
+        if (currentColor == "gray")
+            return "red";
+        else{
+            Debug.Log("SHOULDNT GET HERE");
+            return "gray";
+        }
+    }
+
+    public void turnRedOn(){
+        GetComponent<AudioSource>().Play();
+        GetComponent<Collider>().isTrigger = false;
+        GetComponent<Renderer>().material = baseMat;
+        var tempColor = RedUI.GetComponent<RawImage>().color;
+        tempColor.a = 1f;
+        RedUI.GetComponent<RawImage>().color = tempColor;
+    }
+
+    public void turnRedOff(){
+        GetComponent<AudioSource>().Play();
+        GetComponent<Collider>().isTrigger = true;
+        GetComponent<Renderer>().material = grayMat;
+        var tempColor = RedUI.GetComponent<RawImage>().color;
+        tempColor.a = 0.4f;
+        RedUI.GetComponent<RawImage>().color = tempColor;
+    }
+
+    public void turnBlueOn(){
+        GetComponent<AudioSource>().Play();
+        GetComponent<Collider>().isTrigger = false;
+        GetComponent<Renderer>().material = baseMat;
+        var tempColor = BlueUI.GetComponent<RawImage>().color;
+        tempColor.a = 1f;
+        BlueUI.GetComponent<RawImage>().color = tempColor;
+    }
+
+    public void turnBlueOff(){
+        GetComponent<AudioSource>().Play();
+        GetComponent<Collider>().isTrigger = true;
+        GetComponent<Renderer>().material = grayMat;
+        var tempColor = BlueUI.GetComponent<RawImage>().color;
+        tempColor.a = 0.4f;
+        BlueUI.GetComponent<RawImage>().color = tempColor;
+    }
+
+    public void turnGreenOn(){
+        Debug.Log("turning green on");
+        var tempColor = GreenUI.GetComponent<RawImage>().color;
+        tempColor.a = 1f;
+        GreenUI.GetComponent<RawImage>().color = tempColor;
+    }
+
+    public void turnGreenOff(){
+        Debug.Log("turning green off");
+        var tempColor = GreenUI.GetComponent<RawImage>().color;
+        tempColor.a = 0.4f;
+        GreenUI.GetComponent<RawImage>().color = tempColor;
     }
 }
