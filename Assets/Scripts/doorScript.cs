@@ -15,7 +15,6 @@ public class doorScript : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.name == "Player" && !isOpen){
             anim.enabled = true;
-            Debug.Log("Opening Door");
             anim.SetTrigger("OpenDoor");
             isOpen = true;
         }
@@ -24,13 +23,4 @@ public class doorScript : MonoBehaviour
     private void Pause(){
         anim.enabled = false;
     }
-
-    // private void OnTriggerExit(Collider other) {
-    //     if (other.gameObject.name == "Player" && isOpen){
-    //         Debug.Log("Closing Door");
-    //         anim.SetTrigger("CloseDoor");
-    //         isOpen = false;
-    //     }
-    // }
-
 }

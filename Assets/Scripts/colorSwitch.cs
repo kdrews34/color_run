@@ -128,7 +128,6 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnGreenOn(){
-        Debug.Log("turning green on");
         GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Renderer>().material = baseMat;
@@ -138,7 +137,6 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnGreenOff(){
-        Debug.Log("turning green off");
         GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = true;
         GetComponent<Renderer>().material = grayMat;
