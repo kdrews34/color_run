@@ -54,21 +54,17 @@ public class colorSwitch : MonoBehaviour
                 turnBlueOn();
             else if (nextColor == "blue" && baseColor == "red")
                 turnRedOff();
-            else if (nextColor == "blue" && baseColor == "green" && greenEnabled){
-                Debug.Log("calling turngreenoff");
+            else if (nextColor == "blue" && baseColor == "green" && greenEnabled)
                 turnGreenOff();
-            }
-            else if (nextColor == "green" && baseColor == "green"){
-                Debug.Log("calling turngreenon");
+            else if (nextColor == "red" && baseColor == "green" && greenEnabled)
+                turnGreenOff();
+            else if (nextColor == "green" && baseColor == "green")
                 turnGreenOn();
-            }
             else if (nextColor == "green" && baseColor == "red")
                 turnRedOff();
             else if (nextColor == "green" && baseColor == "blue")
-                turnBlueOff();
-            else{
-                Debug.Log("Undefined state");
-            }
+                turnBlueOff(); 
+
             currentColor = nextColor;
         }
     }
@@ -80,7 +76,7 @@ public class colorSwitch : MonoBehaviour
             return "gray";
         if (currentColor == "blue" && greenEnabled)
         {
-            Debug.Log("returning green");
+            //Debug.Log("returning green");
             return "green";
         }
         if (currentColor == "blue" && !greenEnabled)
@@ -90,7 +86,7 @@ public class colorSwitch : MonoBehaviour
         if (currentColor == "gray")
             return "red";
         else{
-            Debug.Log("SHOULDNT GET HERE");
+            //Debug.Log("SHOULDNT GET HERE");
             return "gray";
         }
     }
@@ -133,6 +129,9 @@ public class colorSwitch : MonoBehaviour
 
     public void turnGreenOn(){
         Debug.Log("turning green on");
+        GetComponent<AudioSource>().Play();
+        GetComponent<Collider>().isTrigger = false;
+        GetComponent<Renderer>().material = baseMat;
         var tempColor = GreenUI.GetComponent<RawImage>().color;
         tempColor.a = 1f;
         GreenUI.GetComponent<RawImage>().color = tempColor;
@@ -140,8 +139,19 @@ public class colorSwitch : MonoBehaviour
 
     public void turnGreenOff(){
         Debug.Log("turning green off");
+        GetComponent<AudioSource>().Play();
+        GetComponent<Collider>().isTrigger = true;
+        GetComponent<Renderer>().material = grayMat;
         var tempColor = GreenUI.GetComponent<RawImage>().color;
         tempColor.a = 0.4f;
         GreenUI.GetComponent<RawImage>().color = tempColor;
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        other.gameObject.transform.parent = transform;
+    }
+
+    private void OnCollisionExit(Collision other) {
+        other.gameObject.transform.parent = null;
     }
 }
