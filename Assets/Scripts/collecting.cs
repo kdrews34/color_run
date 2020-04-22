@@ -8,7 +8,7 @@ public class collecting : MonoBehaviour
     public GameObject Player;
     public GameObject nextColor;
     public GameObject colorSound;
-    private string[] colors = new string[] {"lvl1_red1", "lvl1_red2", "lvl1_red3", "lvl1_red4", "lvl2_red1", "lvl2_red2", "lvl2_red3", "lvl2_red4", "lvl2_blue1", "lvl2_blue2", "lvl2_blue3", "lvl3_green1"};
+    private string[] colors = new string[] {"lvl1_red1", "lvl1_red2", "lvl1_red3", "lvl1_red4", "lvl2_red1", "lvl2_red2", "lvl2_red3", "lvl2_red4", "lvl2_blue1", "lvl2_blue2", "lvl2_blue3", "lvl3_blue1", "lvl3_blue2", "lvl3_blue3", "lvl3_green1", "lvl3_green2", "lvl3_green3", "lvl3_green4", "lvl3_green5", "lvl3_green6", "lvl3_red1", "lvl3_red2", "lvl3_red3", "lvl3_red4", "lvl3_red5"};
 
     public string thisColor;
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -56,6 +57,14 @@ public class PlayerMove : MonoBehaviour
             originalPosition = transform.position;
             originalRotation = transform.rotation;
             currentTheme = "second";
+        }
+        else if (transform.position.x > 10f && currentTheme == "second"){
+            originalPosition = transform.position;
+            originalRotation = transform.rotation;
+            currentTheme = "third";
+        }
+        else if (transform.position.x > 79f && currentTheme == "third"){
+            SceneManager.LoadScene("CreditScene");
         }
 
         PlayerMovement();
