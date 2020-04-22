@@ -1366,8 +1366,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Long Long Long ago, Where there was a city that had no colors. A man wondered
-    around the colorless city. And soon his world will be different...
+  m_text: A long, long, long time ago, Where there was a city that had no colors.
+    A man wondered around the colorless city. And soon his world will be different...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00f2b12093fc64cc7a7cb32b06eed6e3, type: 2}
   m_sharedMaterial: {fileID: 6417931401714639102, guid: 00f2b12093fc64cc7a7cb32b06eed6e3,
