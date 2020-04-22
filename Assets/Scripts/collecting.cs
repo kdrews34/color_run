@@ -8,7 +8,7 @@ public class collecting : MonoBehaviour
     public GameObject Player;
     public GameObject nextColor;
     public GameObject colorSound;
-    private string[] colors = new string[] {"red1", "red2", "red3", "red4", "blue1", "blue2", "blue3", "green1"};
+    private string[] colors = new string[] {"lvl1_red1", "lvl1_red2", "lvl1_red3", "lvl1_red4", "lvl2_red1", "lvl2_red2", "lvl2_red3", "lvl2_red4", "lvl2_blue1", "lvl2_blue2", "lvl2_blue3", "lvl3_green1"};
 
     public string thisColor;
 
@@ -21,7 +21,7 @@ public class collecting : MonoBehaviour
                 if (thisColor == "green")
                     GameObject.Find(color).GetComponent<colorSwitch>().greenEnabled = true;
 
-                GameObject.Find(color).GetComponent<colorSwitch>().currentColor = GameObject.Find("red1").GetComponent<colorSwitch>().currentColor;
+                GameObject.Find(color).GetComponent<colorSwitch>().currentColor = GameObject.Find("lvl1_red1").GetComponent<colorSwitch>().currentColor;
             }
             Destroy(this.gameObject);
             var tempColor = nextColor.GetComponent<RawImage>().color;
