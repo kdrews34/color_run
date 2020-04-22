@@ -52,7 +52,11 @@ public class PlayerMove : MonoBehaviour
             firstLevelTheme.Play();
             DungeonAmbience.Play();
         }
-            //Application.Quit();
+        else if (transform.position.z > 39f && currentTheme == "first"){
+            originalPosition = transform.position;
+            originalRotation = transform.rotation;
+            currentTheme = "second";
+        }
 
         PlayerMovement();
     }

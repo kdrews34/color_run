@@ -25,19 +25,17 @@ public class colorSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentColor = "red";
+        currentColor = "gray";
         blueEnabled = false;
         greenEnabled = false;
 
-        if (baseColor == "red"){
-            GetComponent<Collider>().isTrigger = false;
-            baseMat = GetComponent<Renderer>().material;
-        }
-        else {
-            GetComponent<Collider>().isTrigger = true;
-            baseMat = GetComponent<Renderer>().material;
-            GetComponent<Renderer>().material = grayMat;
-        }
+        var tempColor = RedUI.GetComponent<RawImage>().color;
+        tempColor.a = 0.4f;
+        RedUI.GetComponent<RawImage>().color = tempColor;
+
+        GetComponent<Collider>().isTrigger = true;
+        baseMat = GetComponent<Renderer>().material;
+        GetComponent<Renderer>().material = grayMat;
     }
 
     // Update is called once per frame
