@@ -61,4 +61,7 @@ Texture- added texture to the platforms to make them more realistic. Plus change
 Walls- Changed the walls to blend in more with the theme of the game 
 Sound- Added various of sounds to for quality of life and to ensure everything you do gets a recognized sound
 
+MODIFACTIONS AFTER ALPHA TESTING -------------------------------
+We added more levels since the testers really wanted to see more of it. We added a Menu and Credit for more quality of life of the game and making it feel more like a game. Plus lowered the volume of the game since it was said it is loud. But other than that. Just a more extended game and quaility of life has been added
+
 
