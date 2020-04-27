@@ -34,6 +34,11 @@ public class SimpleCharacterControl : MonoBehaviour {
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 
+    public bool isReset = true;
+    public float MyTimer = 0.0f;
+    public float WaitTime = 5.0f;
+
+
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint[] contactPoints = collision.contacts;
@@ -123,15 +128,41 @@ public class SimpleCharacterControl : MonoBehaviour {
             v *= m_walkScale;
         }
 
-        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+
+        if(isReset)
+        {
+          m_currentV = Mathf.Lerp(m_currentV, 1, Time.deltaTime * m_interpolation);
+          m_currentH = Mathf.Lerp(m_currentH, 0, Time.deltaTime * m_interpolation);
+        }
+        else{
+          m_currentV = Mathf.Lerp(m_currentV, 0, Time.deltaTime * m_interpolation);
+          m_currentH = Mathf.Lerp(m_currentH, 0, Time.deltaTime * m_interpolation);
+          MyTimer +=Time.deltaTime;
+        }
+
+
 
         transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
         transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
 
+        if(MyTimer > WaitTime)
+        {
+          m_currentV = Mathf.Lerp(m_currentV, 15, Time.deltaTime * m_interpolation);
+          m_currentH = Mathf.Lerp(m_currentH, 10, Time.deltaTime * m_interpolation);
+          transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+          transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
+          MyTimer=0;
+        }
+
+
+        if(transform.position.z > -45)
+        {
+          isReset=false;
+        }
+
         m_animator.SetFloat("MoveSpeed", m_currentV);
 
-        JumpingAndLanding();
+        //JumpingAndLanding();
     }
 
     private void DirectUpdate()
@@ -147,8 +178,8 @@ public class SimpleCharacterControl : MonoBehaviour {
             h *= m_walkScale;
         }
 
-        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+        m_currentV = Mathf.Lerp(m_currentV, 0, Time.deltaTime * m_interpolation);
+        m_currentH = Mathf.Lerp(m_currentH, 0, Time.deltaTime * m_interpolation);
 
         Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
 
@@ -166,7 +197,7 @@ public class SimpleCharacterControl : MonoBehaviour {
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
         }
 
-        JumpingAndLanding();
+        //JumpingAndLanding();
     }
 
     private void JumpingAndLanding()
