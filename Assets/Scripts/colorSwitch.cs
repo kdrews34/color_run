@@ -41,6 +41,9 @@ public class colorSwitch : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
+            if (this.gameObject.name == "lvl1_red1")
+                GetComponent<AudioSource>().Play();
+
             string nextColor = getNextColor();
             if (nextColor == "red" && baseColor == "red")
                 turnRedOn();
@@ -90,7 +93,7 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnRedOn(){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Renderer>().material = baseMat;
         var tempColor = RedUI.GetComponent<RawImage>().color;
@@ -99,7 +102,7 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnRedOff(){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = true;
         GetComponent<Renderer>().material = grayMat;
         var tempColor = RedUI.GetComponent<RawImage>().color;
@@ -108,7 +111,7 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnBlueOn(){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Renderer>().material = baseMat;
         var tempColor = BlueUI.GetComponent<RawImage>().color;
@@ -117,7 +120,7 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnBlueOff(){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = true;
         GetComponent<Renderer>().material = grayMat;
         var tempColor = BlueUI.GetComponent<RawImage>().color;
@@ -126,7 +129,7 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnGreenOn(){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Renderer>().material = baseMat;
         var tempColor = GreenUI.GetComponent<RawImage>().color;
@@ -135,7 +138,7 @@ public class colorSwitch : MonoBehaviour
     }
 
     public void turnGreenOff(){
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         GetComponent<Collider>().isTrigger = true;
         GetComponent<Renderer>().material = grayMat;
         var tempColor = GreenUI.GetComponent<RawImage>().color;

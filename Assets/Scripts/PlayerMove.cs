@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private AudioSource startTheme;
     [SerializeField] private AudioSource firstLevelTheme;
+    [SerializeField] private AudioSource endTheme;
     [SerializeField] private AudioSource DungeonAmbience;
 
     private string currentTheme;
@@ -63,7 +64,13 @@ public class PlayerMove : MonoBehaviour
             originalRotation = transform.rotation;
             currentTheme = "third";
         }
-        else if (transform.position.x > 115f && currentTheme == "third"){
+        else if (transform.position.x > 87f && currentTheme == "third"){
+            firstLevelTheme.Stop();
+            DungeonAmbience.Stop();
+            endTheme.Play();
+            currentTheme = "end";
+        }
+        else if (transform.position.x > 115f){
             SceneManager.LoadScene("CreditScene");
         }
 
