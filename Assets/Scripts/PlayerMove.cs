@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
             originalRotation = transform.rotation;
             currentTheme = "third";
         }
-        else if (transform.position.x > 79f && currentTheme == "third"){
+        else if (transform.position.x > 115f && currentTheme == "third"){
             SceneManager.LoadScene("CreditScene");
         }
 
