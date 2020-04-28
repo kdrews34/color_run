@@ -6872,7 +6872,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4ffbb8c6b76ec0942bcb8142d054005b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -18722,7 +18722,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100008, guid: ca8b4146813654f499c92aef2a861a30, type: 3}
       propertyPath: m_Name
-      value: lvl2_MysteriousMan (1)
+      value: lvl3_MysteriousMan
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ca8b4146813654f499c92aef2a861a30, type: 3}
       propertyPath: m_IsActive
@@ -18820,7 +18820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62178aae30de3d44780d349251a6558c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiObject: {fileID: 479532267}
+  uiObject: {fileID: 1443449239}
 --- !u!82 &1169205145
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19719,8 +19719,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Well well well....you gained yet another color. don't expect this trial
-    to be as forgiving as the last.
+  m_Text: This will be your final trial. Complete it to finally restore color to your
+    world. Good luck!
 --- !u!222 &1210092309
 CanvasRenderer:
   m_ObjectHideFlags: 0
